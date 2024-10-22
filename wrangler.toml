@@ -1,9 +1,53 @@
 name = "ns1" # todo
 main = "_worker.js"
 compatibility_date = "2024-05-26"
+
+
+# ava.game.naver.com
+# graph.instagram.com
+# quiz.int.vidio.com
+# live.iflix.com
+# support.zoom.us
+# blog.webex.com
+# cache.netflix.com
+# investors.spotify.com
+# zaintest.vuclip.com
+# io.ruangguru.com
+
 [[routes]]
 pattern = "ns1.bmkg.xyz"
 custom_domain = true
+[[routes]]
+pattern = "ava.game.naver.com.ns1.bmkg.xyz"
+custom_domain = true
+[[routes]]
+pattern = "graph.instagram.com.ns1.bmkg.xyz"
+custom_domain = true
+[[routes]]
+pattern = "quiz.int.vidio.com.ns1.bmkg.xyz"
+custom_domain = true
+[[routes]]
+pattern = "ruangguru.com.ns1.bmkg.xyz"
+custom_domain = true
+[[routes]]
+pattern = "live.iflix.com.ns1.bmkg.xyz"
+custom_domain = true
+[[routes]]
+pattern = "support.zoom.us.ns1.bmkg.xyz"
+custom_domain = true
+[[routes]]
+pattern = "blog.webex.com.ns1.bmkg.xyz"
+custom_domain = true
+[[routes]]
+pattern = "investors.spotify.com.ns1.bmkg.xyz"
+custom_domain = true
+[[routes]]
+pattern = "cache.netflix.com.ns1.bmkg.xyz"
+custom_domain = true
+[[routes]]
+pattern = "zaintest.vuclip.com.ns1.bmkg.xyz"
+custom_domain = true
+
 
 [vars]
 PROXYIP = "54.251.167.101"
@@ -15,6 +59,7 @@ PROXYIP = "54.251.167.101"
  # 166.88.35.141
  # 172.232.238.169  london
  # 54.251.167.101 
+ 
 UUID = "d2eed70a-4102-42b0-8b40-279e6d901a02,36d47e1e-1f4d-420b-93f0-dadb5e5d2d97,e308f673-f15d-4633-90f8-18438bab3c4f,d92417b6-0aa0-423c-93ad-179a51c88200"
 # d2eed70a-4102-42b0-8b40-279e6d901a02
 # 36d47e1e-1f4d-420b-93f0-dadb5e5d2d97
