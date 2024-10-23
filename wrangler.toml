@@ -14,39 +14,7 @@ compatibility_date = "2024-05-26"
 # zaintest.vuclip.com
 # io.ruangguru.com
 
-[[routes]]
-pattern = "ns1.bmkg.xyz"
-custom_domain = true
-[[routes]]
-pattern = "ava.game.naver.com.ns1.bmkg.xyz"
-custom_domain = true
-[[routes]]
-pattern = "graph.instagram.com.ns1.bmkg.xyz"
-custom_domain = true
-[[routes]]
-pattern = "quiz.int.vidio.com.ns1.bmkg.xyz"
-custom_domain = true
-[[routes]]
-pattern = "ruangguru.com.ns1.bmkg.xyz"
-custom_domain = true
-[[routes]]
-pattern = "live.iflix.com.ns1.bmkg.xyz"
-custom_domain = true
-[[routes]]
-pattern = "support.zoom.us.ns1.bmkg.xyz"
-custom_domain = true
-[[routes]]
-pattern = "blog.webex.com.ns1.bmkg.xyz"
-custom_domain = true
-[[routes]]
-pattern = "investors.spotify.com.ns1.bmkg.xyz"
-custom_domain = true
-[[routes]]
-pattern = "cache.netflix.com.ns1.bmkg.xyz"
-custom_domain = true
-[[routes]]
-pattern = "zaintest.vuclip.com.ns1.bmkg.xyz"
-custom_domain = true
+
 
 
 [vars]
