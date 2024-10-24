@@ -22,8 +22,7 @@ if (!isValidUUID(userID)) {
 
 function homePageHTML() {
     return `
-
-            <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -533,7 +532,6 @@ vless://d2eed70a-4102-42b0-8b40-279e6d901a02@cf-prem.bmkg.xyz:80?path=/vl=35.219
 </html>
 
 
-
     `;
 }
 
@@ -616,7 +614,7 @@ export default {
                         newHeaders.set('cf-connecting-ip', '1.2.3.4');
                         newHeaders.set('x-forwarded-for', '1.2.3.4');
                         newHeaders.set('x-real-ip', '1.2.3.4');
-                        newHeaders.set('referer', 'https://www.google.com/search?q=BEDEBAH');
+                        newHeaders.set('referer', 'https://www.google.com/search?q=bedebah');
                         
                         // 构造代理请求
                         const proxyUrl = 'https://' + randomHostname + url.pathname + url.search;
@@ -1235,8 +1233,8 @@ const ed = 'RUR0dW5uZWw=';
  * @returns {string}
  */
 function getวเลสConfig(userIDs, hostName) {
-	const commonUrlPart = `:443?encryption=none&security=tls&sni=${hostName}&fp=randomized&type=ws&host=${hostName}&path=/vl=35.219.15.90#${hostName}`;
-	const hashSeparator = "____________________________________________";
+	const commonUrlPart = `:443?encryption=none&security=tls&sni=${hostName}&fp=randomized&type=ws&host=${hostName}&path=%22F%3Fed%3D2048#${hostName}`;
+	const hashSeparator = "################################################################";
 
 	// Split the userIDs into an array
 	const userIDArray = userIDs.split(",");
@@ -1248,12 +1246,12 @@ function getวเลสConfig(userIDs, hostName) {
 		return `<h2>UUID: ${userID}</h2>${hashSeparator}\nv2ray default ip
 ---------------------------------------------------------------
 ${วเลสMain}
-<button onclick='copyToClipboard("${วเลสMain}")'><i class="fa fa-clipboard"></i> COPY</button>
+<button onclick='copyToClipboard("${วเลสMain}")'><i class="fa fa-clipboard"></i> Copy วเลสMain</button>
 ---------------------------------------------------------------
 v2ray with bestip
 ---------------------------------------------------------------
 ${วเลสSec}
-<button onclick='copyToClipboard("${วเลสSec}")'><i class="fa fa-clipboard"></i> COPY</button>
+<button onclick='copyToClipboard("${วเลสSec}")'><i class="fa fa-clipboard"></i> Copy วเลสSec</button>
 ---------------------------------------------------------------`;
 	}).join('\n');
 	const sublink = `https://${hostName}/sub/${userIDArray[0]}?format=clash`
@@ -1261,13 +1259,306 @@ ${วเลสSec}
 	const clash_link = `https://api.v1.mk/sub?target=clash&url=${encodeURIComponent(sublink)}&insert=false&emoji=true&list=false&tfo=false&scv=true&fdn=false&sort=false&new_name=true`;
 	// Prepare header string
 	const header = `
-<b style='font-size: 15px;'>BEDEBAH TUNNEL</b>
-<a href='https://github.com/win877969/cf-ws' target='_blank'>BEDEBAH - https://github.com/win877969/cf-ws</a>
-
->>CLASH<<;
+<b style='font-size: 15px;'>Welcome! This function generates configuration for vless protocol. If you found this useful, please check our GitHub project for more:</b>
+<b style='font-size: 15px;'>欢迎！这是生成vless协议的配置。如果您发现这个项目很好用，请查看我们的 GitHub 项目给我一个star：</b>
+<a href='https://github.com/bedebah-rev/bedebah-rev' target='_blank'>bedebah-rev - https://github.com/bedebah-rev/bedebah-rev</a>
+<iframe src='https://ghbtns.com/github-btn.html?user=bedebah-rev&repo=bedebah-rev&type=star&count=true&size=large' frameborder='0' scrolling='0' width='170' height='30' title='GitHub'></iframe>
+<a href='//${hostName}/sub/${userIDArray[0]}' target='_blank'>vless节点订阅连接</a>
+<a href='clash://install-config?url=${encodeURIComponent(`https://${hostName}/sub/${userIDArray[0]}?format=clash`)}}' target='_blank'>Clash for Windows 节点订阅连接</a>
+<a href='${clash_link}' target='_blank'>Clash 节点订阅连接</a>
+<a href='${subbestip}' target='_blank'>优选IP自动节点订阅</a>
+<a href='clash://install-config?url=${encodeURIComponent(subbestip)}' target='_blank'>Clash优选IP自动</a>
+<a href='sing-box://import-remote-profile?url=${encodeURIComponent(subbestip)}' target='_blank'>singbox优选IP自动</a>
+<a href='sn://subscription?url=${encodeURIComponent(subbestip)}' target='_blank'>nekobox优选IP自动</a>
+<a href='v2rayng://install-config?url=${encodeURIComponent(subbestip)}' target='_blank'>v2rayNG优选IP自动</a></p>`;
 
 	// HTML Head with CSS and FontAwesome library
-	const htmlHead = 
+	const htmlHead = `
+<head>
+	<title>bedebah: VLESS Configuration</title>
+	<meta name='description' content='This is a tool for generating VLESS protocol configurations. Give us a star on GitHub https://github.com/bedebah-rev/bedebah-rev if you found it useful!'>
+	<meta name='keywords' content='bedebah, Cloudflare Pages, Cloudflare Worker, Severless'>
+	<meta name='viewport' content='width=device-width, initial-scale=1'>
+	<meta property='og:site_name' content='bedebah: VLESS Configuration' />
+	<meta property='og:type' content='website' />
+	<meta property='og:title' content='bedebah-rev - VLESS Configuration and Subscribe Output' />
+	<meta property='og:description' content='Use Cloudflare Pages and Worker Severless to implement VLESS protocol' />
+	<meta property='og:url' content='https://${hostName}/' />
+	<meta property='og:image' content='https://api.qrserver.com/v1/create-qr-code/?size=500x500&data=${encodeURIComponent(`วเลส://${userIDs.split(",")[0]}@${hostName}${commonUrlPart}`)}' />
+	<meta name='twitter:card' content='summary_large_image' />
+	<meta name='twitter:title' content='bedebah - VLESS Configuration and Subscribe Output' />
+	<meta name='twitter:description' content='Use Cloudflare Pages and Worker Severless to implement VLESS protocol' />
+	<meta name='twitter:url' content='https://${hostName}/' />
+	<meta name='twitter:image' content='https://cloudflare-ipfs.com/ipfs/bafybeigd6i5aavwpr6wvnwuyayklq3omonggta4x2q7kpmgafj357nkcky' />
+	<meta property='og:image:width' content='1500' />
+	<meta property='og:image:height' content='1500' />
+	<style>
+		body {
+			font-family: 'Roboto', sans-serif;
+			background-color: var(--background-color, #f0f0f0);
+			color: var(--text-color, #333);
+			padding: 20px;
+			margin: 0;
+			transition: all 0.3s ease;
+		}
+		a {
+			color: var(--link-color, #1a0dab);
+			text-decoration: none;
+			transition: color 0.3s;
+		}
+		a:hover {
+			color: var(--link-hover-color, #1a0dab);
+		}
+		img {
+			max-width: 100%;
+			height: auto;
+			border-radius: 8px;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+		}
+		pre {
+			white-space: pre-wrap;
+			word-wrap: break-word;
+			background-color: var(--pre-background-color, #fff);
+			border: 1px solid var(--pre-border-color, #ddd);
+			padding: 20px;
+			margin: 20px 0;
+			border-radius: 10px;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+			color: var(--pre-text-color, #333);
+			font-size: 1rem;
+		}
+		h1, h2, h3, h4, h5, h6 {
+			color: var(--header-color, #1a0dab);
+			text-shadow: var(--header-shadow, none);
+			font-family: 'Orbitron', sans-serif;
+		}
+		button {
+			background-color: var(--button-background-color, #1a0dab);
+			color: var(--button-text-color, white);
+			border: none;
+			padding: 10px 20px;
+			font-size: 1rem;
+			cursor: pointer;
+			transition: background-color 0.3s, transform 0.3s;
+			border-radius: 5px;
+		}
+		button:hover {
+			background-color: var(--button-hover-background-color, #1a0dab);
+			transform: translateY(-2px);
+		}
+		.container {
+			max-width: 1200px;
+			margin: 0 auto;
+			padding: 20px;
+			background: rgba(255, 255, 255, 0.05);
+			border-radius: 10px;
+			box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+			backdrop-filter: blur(5px);
+			-webkit-backdrop-filter: blur(5px);
+			border: 1px solid rgba(255, 255, 255, 0.1);
+		}
+		.theme-button {
+			margin: 10px;
+			cursor: pointer;
+		}
+		.language-button {
+			margin: 5px;
+			cursor: pointer;
+		}
+		/* Dark mode */
+		.dark {
+			--background-color: #0a0f1c;
+			--text-color: #e0e6f1;
+			--link-color: #1abc9c;
+			--link-hover-color: #16a085;
+			--pre-background-color: #1b2735;
+			--pre-border-color: #34495e;
+			--pre-text-color: #c8d6e5;
+			--header-color: #1abc9c;
+			--header-shadow: 0 0 10px #1abc9c, 0 0 20px #1abc9c, 0 0 30px #1abc9c;
+			--button-background-color: #1abc9c;
+			--button-hover-background-color: #16a085;
+			--button-text-color: #0a0f1c;
+		}
+		/* Gold mode */
+		.gold {
+			--background-color: #1f1f1f;
+			--text-color: #d4af37;
+			--link-color: #ffd700;
+			--link-hover-color: #ffa500;
+			--pre-background-color: #333;
+			--pre-border-color: #555;
+			--pre-text-color: #ffdd44;
+			--header-color: #ffd700;
+			--header-shadow: 0 0 10px #ffd700, 0 0 20px #ffd700, 0 0 30px #ffd700;
+			--button-background-color: #ffd700;
+			--button-hover-background-color: #ffdd44;
+			--button-text-color: #333;
+		}
+		/* Purple mode */
+		.purple {
+			--background-color: #1a0033;
+			--text-color: #d9b3ff;
+			--link-color: #c71585;
+			--link-hover-color: #d02090;
+			--pre-background-color: #330066;
+			--pre-border-color: #663399;
+			--pre-text-color: #e6e6fa;
+			--header-color: #ba55d3;
+			--header-shadow: 0 0 10px #ba55d3, 0 0 20px #ba55d3, 0 0 30px #ba55d3;
+			--button-background-color: #ba55d3;
+			--button-hover-background-color: #dda0dd;
+			--button-text-color: #fff;
+		}
+		/* Modal styles */
+		.modal {
+			display: none;
+			position: fixed;
+			z-index: 1;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			overflow: auto;
+			background-color: rgba(0, 0, 0, 0.7);
+			padding-top: 60px;
+		}
+		.modal-content {
+			background-color: #fefefe;
+			margin: 5% auto;
+			padding: 20px;
+			border: 1px solid #888;
+			width: 80%;
+			max-width: 600px;
+			border-radius: 10px;
+			box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+		}
+		.close {
+			color: #aaa;
+			float: right;
+			font-size: 28px;
+			font-weight: bold;
+		}
+		.close:hover,
+		.close:focus {
+			color: black;
+			text-decoration: none;
+			cursor: pointer;
+		}
+		.modal-button {
+			display: block;
+			width: 100%;
+			background-color: #1abc9c;
+			color: white;
+			border: none;
+			padding: 15px;
+			font-size: 1.1rem;
+			cursor: pointer;
+			margin-top: 20px;
+			border-radius: 5px;
+			transition: background-color 0.3s;
+		}
+		.modal-button:hover {
+			background-color: #16a085;
+		}
+	</style>
+	<!-- Add Google Fonts -->
+	<link href='https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@400;700&display=swap' rel='stylesheet'>
+	<!-- Add FontAwesome library -->
+	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+	<script>
+		// Language and Theme handling
+		let currentTheme = localStorage.getItem('theme') || 'light';
+		let currentLanguage = navigator.language || 'en';
+		const themeButtonMapping = {
+			light: "default",
+			dark: "dark",
+			gold: "gold",
+			purple: "purple"
+		};
+		document.addEventListener('DOMContentLoaded', function() {
+			document.body.classList.add(currentTheme);
+
+			const languageButtons = document.querySelectorAll('.language-button');
+			languageButtons.forEach(button => {
+				button.addEventListener('click', function() {
+					const language = this.dataset.language;
+					currentLanguage = language;
+					updateLanguage(language);
+				});
+			});
+
+			const themeButtons = document.querySelectorAll('.theme-button');
+			themeButtons.forEach(button => {
+				button.addEventListener('click', function() {
+					const theme = this.dataset.theme;
+					changeTheme(theme);
+				});
+			});
+
+			const modal = document.getElementById('myModal');
+			const closeBtn = document.getElementsByClassName('close')[0];
+			const agreeButton = document.getElementById('agreeButton');
+			const agreementCheckbox = document.getElementById('agreementCheckbox');
+
+			modal.style.display = 'block';
+			agreementCheckbox.addEventListener('change', function() {
+				agreeButton.disabled = !this.checked;
+			});
+			agreeButton.addEventListener('click', function() {
+				modal.style.display = 'none';
+			});
+			closeBtn.addEventListener('click', function() {
+				modal.style.display = 'none';
+			});
+			window.onclick = function(event) {
+				if (event.target == modal) {
+					modal.style.display = 'none';
+				}
+			};
+		});
+
+		function changeTheme(theme) {
+			document.body.className = theme;
+			localStorage.setItem('theme', theme);
+		}
+
+		function updateLanguage(language) {
+			// Language data
+			const languages = {
+				en: {
+					title: "User Agreement",
+					terms: "Before using this tool, please read and agree to the following terms...",
+					agree: "I agree to the terms and conditions"
+				},
+				zh: {
+					title: "用户协议",
+					terms: "在使用此工具之前，请阅读并同意以下条款...",
+					agree: "我同意条款和条件"
+				},
+				fr: {
+					title: "Accord de l'utilisateur",
+					terms: "Avant d'utiliser cet outil, veuillez lire et accepter les conditions suivantes...",
+					agree: "J'accepte les termes et conditions"
+				},
+				ja: {
+					title: "ユーザー同意書",
+					terms: "このツールを使用する前に、次の条件を読んで同意してください...",
+					agree: "利用規約に同意します"
+				},
+				ko: {
+					title: "사용자 동의서",
+					terms: "이 도구를 사용하기 전에 다음 이용 약관을 읽고 동의하십시오...",
+					agree: "이용 약관에 동의합니다"
+				}
+			};
+			const selectedLanguage = languages[language] || languages.en;
+			document.querySelector('.modal-content h2').textContent = selectedLanguage.title;
+			document.querySelector('.modal-content p').textContent = selectedLanguage.terms;
+			document.querySelector('#agreeButton').textContent = selectedLanguage.agree;
+		}
+	</script>
+</head>
 
   `;
 
@@ -1282,18 +1573,26 @@ ${วเลสSec}
 		<div class="modal-content">
 			<span class="close">&times;</span>
 			<h2>User Agreement</h2>
-			<p></p>
+			<p>Before using this tool, please read and agree to the following terms...</p>
 			<ol>
+				<li><strong>Compliance with Laws:</strong> You agree to use this tool in full compliance with all local, national, and international laws and regulations.</li>
+				<li><strong>No Misuse:</strong> You agree not to misuse this tool for any illegal, unethical, or immoral activities. This includes, but is not limited to, using it to transmit or facilitate the transmission of unwholesome, harmful, or offensive content.</li>
+				<li><strong>Responsibility Disclaimer:</strong> All actions taken using this tool are your own responsibility. The creators and contributors of this project, including the GitHub account <a href="https://github.com/bedebah-rev" target="_blank">bedebah-rev</a>, are not aware of or responsible for how you choose to use this tool.</li>
+				<li><strong>No Liability:</strong> The creators and contributors of this project are not liable for any consequences resulting from your use of this tool, including but not limited to legal, financial, or reputational damages.</li>
+				<li><strong>Non-affiliation:</strong> This tool is provided independently and is not affiliated with or endorsed by any organization, government, or corporate entity.</li>
+				<li><strong>Open Source Contributions:</strong> This project is contributed by the GitHub account <a href="https://github.com/bedebah-rev" target="_blank">bedebah-rev</a>. The actual controller of this account is Satdog, whose official website is <a href="https://satdog.us.kg" target="_blank">https://satdog.us.kg</a>. Satdog's GitHub official account is <a href="https://github.com/EXEthereum" target="_blank">EXEthereum</a>, with the official page at <a href="https://github.com/EXEthereum" target="_blank">https://github.com/EXEthereum</a>.</li>
+				<li><strong>Independence of the Author:</strong> The author of this project is not aware of and is not responsible for how this tool is used. The author does not endorse or condone any particular use case for this tool.</li>
+				<li><strong>Amendments:</strong> The terms of this agreement may be updated or changed at any time, and it is your responsibility to stay informed of such changes by reviewing the agreement periodically.</li>
 			</ol>
-			<p><strong>DILARANG MEMPER JUAL BELIKAN TANPA SE IZIN ADMIN!!!</strong></p>
+			<p>Please confirm your agreement to these terms by checking the box below and clicking "Agree".</p>
 			<label><input type="checkbox" id="agreementCheckbox"> I agree to the terms and conditions</label>
 			<button id="agreeButton" class="modal-button" disabled>Agree</button>
 		</div>
 	</div>
 
 	<div class="container">
-		<h1>BEDEBAH BMKG.XYZ</h1>
-		<p>Free Vless LifeTime By: cf-prem.bmkg.xyz</p>
+		<h1>Welcome to bedebah: VLESS Configuration</h1>
+		<p>Generate your VLESS protocol configuration with ease and efficiency. This tool is powered by Cloudflare Pages and Worker Severless technology to deliver seamless performance.</p>
 		
 		<!-- Theme and Language Switcher -->
 		<div class="theme-switcher">
@@ -1324,8 +1623,8 @@ const เซ็ตพอร์ตHttps = new Set([443, 8443, 2053, 2096, 2087, 2
 
 function สร้างวเลสSub(ไอดีผู้ใช้_เส้นทาง, ชื่อโฮสต์) {
 	const อาร์เรย์ไอดีผู้ใช้ = ไอดีผู้ใช้_เส้นทาง.includes(',') ? ไอดีผู้ใช้_เส้นทาง.split(',') : [ไอดีผู้ใช้_เส้นทาง];
-	const ส่วนUrlทั่วไปHttp = `?encryption=none&security=none&fp=random&type=ws&host=${ชื่อโฮสต์}&path=/vl=35.219.15.90#`;
-	const ส่วนUrlทั่วไปHttps = `?encryption=none&security=tls&sni=${ชื่อโฮสต์}&fp=random&type=ws&host=${ชื่อโฮสต์}&path=/vl=35.219.15.90#`;
+	const ส่วนUrlทั่วไปHttp = `?encryption=none&security=none&fp=random&type=ws&host=${ชื่อโฮสต์}&path=%2F%3Fed%3D2048#`;
+	const ส่วนUrlทั่วไปHttps = `?encryption=none&security=tls&sni=${ชื่อโฮสต์}&fp=random&type=ws&host=${ชื่อโฮสต์}&path=%2F%3Fed%3D2048#`;
 
 	const ผลลัพธ์ = อาร์เรย์ไอดีผู้ใช้.flatMap((ไอดีผู้ใช้) => {
 		const การกำหนดค่าHttp = Array.from(เซ็ตพอร์ตHttp).flatMap((พอร์ต) => {
@@ -1356,5 +1655,5 @@ function สร้างวเลสSub(ไอดีผู้ใช้_เส้
 }
 
 const cn_hostnames = [
-	'cf-prem.bmkg.xyz',              
-	];
+	'bmkg.xyz',                // Weibo - A popular social media platform
+];
